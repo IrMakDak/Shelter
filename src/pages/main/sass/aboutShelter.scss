@@ -1,0 +1,33 @@
+.about {
+    height: 588px;
+    padding: 80px 0px 100px 0px;
+    &__dog {
+        display: block;
+        padding-right: 120px;
+    }
+    &__info {
+        width: 430px;
+        height: 380px;
+    }
+    &__heading {
+        width: 370px;
+        letter-spacing: 0.06em;
+        color: #545454;
+        font-size: 35px;
+        margin-top: 0;
+
+        font-family: 'Georgia', serif;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+    }
+    &__subheading {
+        width: 100%;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 160%;
+        color: #4C4C4C;
+        margin-top: 25px;
+    }
+}

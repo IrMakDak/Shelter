@@ -1,0 +1,59 @@
+.donation {
+    background: #F6F6F6;
+    height: 462px;
+    display: flex;
+    justify-content: center;
+    padding: 80px 0px 100px 0px;
+    &__dog {
+        display: block;
+        margin-right: 30px;
+    }
+    &__info {
+        width: 380px;
+    }
+    &__heading {
+        margin-bottom: 0;
+    }
+    &__bank {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 110%;
+
+        letter-spacing: 0.06em;
+
+        color: #545454;
+        margin: 20px 0px;
+    }
+    &__input {
+        padding: 10px 15px;
+        width: 349px;
+        height: 43px;
+        display: flex;
+
+        background: #F1CDB3;
+        border-radius: 9px;
+    }
+    &__card {
+        padding-left: 15px;
+        background: #F1CDB3;
+        border: 0;
+        color:#545454;
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 115%;
+        width: 300px;
+    }
+    &__legal {
+        width: 100%;
+        color: #B2B2B2;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 18px;
+        max-height: 72px;
+    }
+}

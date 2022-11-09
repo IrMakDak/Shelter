@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian&family=Roboto&display=swap');
+* {
+    // font-family: 'Noto Serif Georgian', serif;
+    font-family: 'Roboto', sans-serif;
+    width: 400;
+    box-sizing: border-box;
+    color: #fff;
+}
+body {
+    box-sizing: border-box;
+    margin: 0;
+    // position: relative;
+}
+h5 {
+    margin: 0;
+}
+.container {
+    &__main {
+        width: 1200px;
+        margin: 0 auto;
+        height: 100%;
+    }
+    &__about {
+        display: flex;
+        justify-content: center;
+        width: 1200px;
+        margin: 0 auto;
+    }
+    &__footer {
+        display: flex;
+        width: 1200px;
+        margin: 0 auto;
+        justify-content: space-between;
+
+    }
+}
+.heading {
+    width: 370px;
+    letter-spacing: 0.06em;
+    color: #545454;
+    font-size: 35px;
+    margin-top: 0;
+
+    font-family: 'Georgia', serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+}
+@import 'main';
+@import 'aboutShelter';
+@import 'homeless';
+@import 'help';
+@import 'donation';
+@import 'footer';

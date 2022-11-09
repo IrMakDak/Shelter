@@ -1,0 +1,416 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Georgian&family=Roboto&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+  width: 400;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h5 {
+  margin: 0;
+}
+
+.container__main {
+  width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+}
+.container__about {
+  display: flex;
+  justify-content: center;
+  width: 1200px;
+  margin: 0 auto;
+}
+.container__footer {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.heading {
+  width: 370px;
+  letter-spacing: 0.06em;
+  color: #545454;
+  font-size: 35px;
+  margin-top: 0;
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+
+main {
+  position: relative;
+  top: 0;
+  box-sizing: border-box;
+  background: url("../img/component.jpg") no-repeat;
+  min-height: 908px;
+  width: 100%;
+  object-fit: fill;
+  background-size: 100%;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 60px;
+  width: 1200px;
+  height: 60px;
+  justify-content: space-between;
+}
+
+.logo {
+  font-style: normal;
+  font-weight: 400;
+}
+.logo__title {
+  font-family: "Georgia", serif;
+  font-size: 32px;
+  line-height: 110%;
+  color: #F1CDB3;
+  width: 184px;
+  height: 35px;
+  top: calc(50% - 17.5px - 12.5px);
+  cursor: pointer;
+}
+.logo__subtitle {
+  width: 179px;
+  height: 15px;
+  left: 4px;
+  top: calc(50% - 7.5px + 22.5px);
+  font-size: 13px;
+  line-height: 15px;
+  margin-top: 10px;
+}
+.logo__dog {
+  position: absolute;
+  left: calc(50% - 349px + 251px);
+  bottom: 0px;
+}
+
+.nav__container {
+  align-items: center;
+  vertical-align: middle;
+}
+.nav__menu {
+  display: flex;
+  width: 443px;
+  height: 27px;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.nav__item {
+  display: flex;
+  flex-direction: column;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  color: #CDCDCD;
+  cursor: pointer;
+}
+.nav__item_selected {
+  display: block;
+  width: 114px;
+  height: 3px;
+  background: #F1CDB3;
+}
+
+.header__info {
+  width: 460px;
+  height: 322px;
+}
+
+.main__heading {
+  font-size: 44px;
+  margin: 223px 0px 0px 0px;
+  max-width: 330px;
+  color: #fff;
+}
+
+.main__subheading {
+  width: 100%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  margin-top: 42px;
+}
+
+.btn__primary {
+  background: #F1CDB3;
+  border-radius: 100px;
+  width: 207px;
+  height: 52px;
+  align-items: center;
+  padding: 15px 45px;
+  border: 0;
+  color: #292929;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  margin-top: 42px;
+  cursor: pointer;
+}
+
+.about {
+  height: 588px;
+  padding: 80px 0px 100px 0px;
+}
+.about__dog {
+  display: block;
+  padding-right: 120px;
+}
+.about__info {
+  width: 430px;
+  height: 380px;
+}
+.about__heading {
+  width: 370px;
+  letter-spacing: 0.06em;
+  color: #545454;
+  font-size: 35px;
+  margin-top: 0;
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+.about__subheading {
+  width: 100%;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 160%;
+  color: #4C4C4C;
+  margin-top: 25px;
+}
+
+.homeless {
+  height: 877px;
+  padding: 80px 0px 100px 0px;
+  background: #F6F6F6;
+}
+.homeless__heading {
+  width: 400px;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+}
+.slider__item {
+  box-sizing: border-box;
+  width: 270px;
+  max-height: 435px;
+  background: #FAFAFA;
+  border-radius: 9px;
+  margin: 60px 90px;
+  height: 435px;
+}
+.slider__img {
+  width: 100%;
+}
+.slider__name {
+  font-family: "Georgia", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: #545454;
+  text-align: center;
+  margin: 30px 0px;
+}
+.slider__more {
+  display: block;
+  font-family: "Georgia", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  width: 187px;
+  height: 52px;
+  color: #292929;
+  letter-spacing: 0.06em;
+  border: 2px solid #F1CDB3;
+  border-radius: 100px;
+  background-color: #fff;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.btn__under-slider {
+  display: block;
+  width: 261px;
+  height: 52px;
+  background: #F1CDB3;
+  border-radius: 100px;
+  color: #292929;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 130%;
+  border: 0;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.help {
+  padding: 80px 0px 100px 0px;
+  min-height: 611px;
+}
+.help__heading {
+  text-align: center;
+  margin: 0 auto;
+}
+.help__wrapper {
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.help__item {
+  height: 113px;
+  margin: 55px 60px;
+}
+.help__png {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.help__descr {
+  font-family: "Georgia", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #545454;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.help__item:first-child {
+  margin-left: 0;
+}
+
+.help__item:nth-child(5) {
+  margin-right: 0;
+}
+
+.donation {
+  background: #F6F6F6;
+  height: 462px;
+  display: flex;
+  justify-content: center;
+  padding: 80px 0px 100px 0px;
+}
+.donation__dog {
+  display: block;
+  margin-right: 30px;
+}
+.donation__info {
+  width: 380px;
+}
+.donation__heading {
+  margin-bottom: 0;
+}
+.donation__bank {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #545454;
+  margin: 20px 0px;
+}
+.donation__input {
+  padding: 10px 15px;
+  width: 349px;
+  height: 43px;
+  display: flex;
+  background: #F1CDB3;
+  border-radius: 9px;
+}
+.donation__card {
+  padding-left: 15px;
+  background: #F1CDB3;
+  border: 0;
+  color: #545454;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  width: 300px;
+}
+.donation__legal {
+  width: 100%;
+  color: #B2B2B2;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  max-height: 72px;
+}
+
+.footer {
+  background: url("../img/footer-bg.jpg") no-repeat;
+  object-fit: fill;
+  background-size: 100%;
+  position: relative;
+  height: 350px;
+  padding: 40px;
+}
+.footer__info {
+  width: 298px;
+  height: 234px;
+}
+.footer__heading {
+  width: 100%;
+  color: #fff;
+  margin: 16px 0px 0px 0px;
+}
+.footer__text {
+  padding-left: 20px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #F1CDB3;
+  margin-top: 5px;
+}
+.footer__png {
+  object-fit: contain;
+}
+.footer__dog {
+  display: block;
+  margin-left: 160px;
+}
+
+.item {
+  display: flex;
+  margin-top: 40px;
+}
+
+.footer__info:last-child {
+  margin-left: 160px;
+  width: 310px;
+}

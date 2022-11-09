@@ -1,0 +1,111 @@
+main {
+    position: relative;
+    top: 0;
+    box-sizing: border-box;
+    background: url("../img/component.jpg") no-repeat;
+    min-height: 908px;
+    width: 100%;
+    object-fit: fill;
+    background-size: 100%;
+    overflow: hidden;
+}
+header {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 60px;
+    width: 1200px;
+    height: 60px;
+    justify-content: space-between;
+}
+.logo {
+    font-style: normal;
+    font-weight: 400;
+    &__title {
+        font-family: 'Georgia', serif;
+        font-size: 32px;
+        line-height: 110%;
+        color: #F1CDB3;
+        width: 184px;
+        height: 35px;
+        top: calc(50% - 35px/2 - 12.5px);
+        cursor: pointer;
+    }
+    &__subtitle {
+        width: 179px;
+        height: 15px;
+        left: 4px;
+        top: calc(50% - 15px/2 + 22.5px);
+        font-size: 13px;
+        line-height: 15px;
+        margin-top: 10px;
+    }
+    &__dog {
+        position: absolute;
+        left: calc(50% - 698px/2 + 251px);
+        bottom: 0px;
+    }
+}
+.nav{
+    &__container {
+        align-items: center;
+        vertical-align: middle;
+    }
+    &__menu {
+        display: flex;
+        width: 443px;
+        height: 27px;
+        justify-content: space-between;
+        margin-top: 16px;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 160%;
+        color:#CDCDCD;
+        cursor: pointer;
+        &_selected {
+            display: block;
+            width: 114px;
+            height: 3px;
+            background: #F1CDB3;
+        }
+    }
+}
+.header__info {
+    width: 460px;
+    height: 322px;
+}
+.main__heading {
+    font-size: 44px;
+    margin: 223px 0px 0px 0px;
+    max-width: 330px;
+    color: #fff;
+}
+.main__subheading {
+    width: 100%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 160%;
+    margin-top: 42px;
+}
+.btn__primary {
+    background: #F1CDB3;
+    border-radius: 100px;
+    width: 207px;
+    height: 52px;
+    align-items: center;
+    padding: 15px 45px;
+    border: 0;
+    color: #292929;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 130%;
+    margin-top: 42px;
+    cursor: pointer;
+}

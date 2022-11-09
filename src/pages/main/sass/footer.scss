@@ -1,0 +1,43 @@
+.footer {
+    background: url("../img/footer-bg.jpg") no-repeat;
+    object-fit: fill;
+    background-size: 100%;
+    position: relative;
+    height: 350px;
+    padding: 40px;
+    &__info {
+        width: 298px;
+        height: 234px;
+    }
+    &__heading {
+        width: 100%;
+        color: #fff;
+        margin: 16px 0px 0px 0px;
+    }
+    &__text {
+        padding-left: 20px;
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 115%;
+        letter-spacing: 0.06em;
+        color: #F1CDB3;
+        margin-top: 5px;
+    }
+    &__png {
+        object-fit: contain;
+    }
+    &__dog {
+        display: block;
+        margin-left: 160px;
+    }
+}
+.item {
+    display: flex;
+    margin-top: 40px;
+}
+.footer__info:last-child {
+    margin-left: 160px;
+    width: 310px;
+}

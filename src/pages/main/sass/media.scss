@@ -1,0 +1,117 @@
+@media (max-width: 1280px) {
+    .container {
+        &__main {
+            width: 708px;
+        }
+        &__about {
+            flex-direction: column-reverse;
+            width: 437px;
+        }
+        &__help {
+            width: 630px;
+        }
+        &__footer {
+            width: 708px;
+            flex-wrap: wrap;
+            justify-content: center;
+            height: 100%;
+        }
+    }
+    main {
+        height: 1165px;
+        padding: 30px;
+    }
+    header {
+        width: 708px;
+        margin-top: 0px;
+    }
+    .logo {
+        &__dog {
+            left: auto;
+            right: 30px;
+            width: 569px;
+            height: 593px;
+        }
+    }
+    .main__heading {
+        max-width: 380px;
+        margin: 60px 0px 0px 0px;
+    }
+    .header__info {
+        margin: 0 auto;
+    }
+    .about {
+        height: 1048px;
+        &__info {
+            margin: 0px 0px 80px 0px;
+        }
+        &__dog {
+            margin: 0 auto;
+            padding: 0;
+            width: 300px;
+        }
+    }
+    .slider {
+        &__item:nth-child(3) {
+            display: none;
+        }
+    }
+    .help {
+        &__wrapper {
+            justify-content: space-between;
+            margin-top: 60px;
+        }
+        &__item {
+            width: 170px;
+            height: 113px;
+            margin: 0px;
+        }
+        &__descr {
+            white-space: nowrap;
+        }
+    }
+    .help__item:nth-child(2), .help__item:nth-child(5), .help__item:nth-child(8) {
+        margin: 0 60px;
+    }
+    .help__item:nth-child(4), .help__item:nth-child(5), .help__item:nth-child(6) {
+        margin-top: 55px;
+        margin-bottom: 55px;
+    }
+    .donation {
+        flex-direction: column-reverse;
+        height: 783px;
+        &__dog {
+            margin: 0 auto;
+            width: 505px;
+            height: 261px;
+            margin-top: 60px;
+        }
+        &__info {
+            margin: 0 auto;
+        }
+    }
+
+    .footer {
+        width: 768px;
+        height: 639px;
+        padding: 30px;
+        padding-bottom: 0;
+        &__dog {
+            margin: 0;
+            display: block;
+            height: 310px;
+            margin-top: 65px;
+        }
+        &__info:first-child {
+            margin-right: 60px;
+            width: 290px;
+        }
+        &__heading {
+            font-size: 33px;
+            margin-top: 0;
+        }
+    }
+    .item:nth-child(3), .item:nth-child(2) {
+        margin-top: 33px;
+    }
+}

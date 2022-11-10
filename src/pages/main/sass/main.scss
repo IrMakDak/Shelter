@@ -1,12 +1,10 @@
 main {
     position: relative;
-    top: 0;
-    box-sizing: border-box;
-    background: url("../img/component.jpg") no-repeat;
-    min-height: 908px;
+    background: url("../../../assets/images/bg/component.jpg") no-repeat;
+    height: 908px;
     width: 100%;
     object-fit: fill;
-    background-size: 100%;
+    background-size: 100% 100%;
     overflow: hidden;
 }
 header {
@@ -49,6 +47,7 @@ header {
     &__container {
         align-items: center;
         vertical-align: middle;
+        width: 443px;
     }
     &__menu {
         display: flex;

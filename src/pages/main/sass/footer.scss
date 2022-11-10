@@ -1,12 +1,12 @@
 .footer {
-    background: url("../img/footer-bg.jpg") no-repeat;
+    background: url("../../../assets/images/bg/footer-bg.jpg") no-repeat;
     object-fit: fill;
-    background-size: 100%;
+    background-size: 100% 100%;
     position: relative;
     height: 350px;
     padding: 40px;
     &__info {
-        width: 298px;
+        max-width: 310px;
         height: 234px;
     }
     &__heading {

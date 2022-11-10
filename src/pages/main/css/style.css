@@ -9,16 +9,16 @@
 body {
   box-sizing: border-box;
   margin: 0;
+  max-width: 100%;
 }
 
 h5 {
   margin: 0;
 }
 
-.container__main {
+.container__main, .container__help {
   width: 1200px;
   margin: 0 auto;
-  height: 100%;
 }
 .container__about {
   display: flex;
@@ -27,6 +27,7 @@ h5 {
   margin: 0 auto;
 }
 .container__footer {
+  overflow: hidden;
   display: flex;
   width: 1200px;
   margin: 0 auto;
@@ -47,13 +48,11 @@ h5 {
 
 main {
   position: relative;
-  top: 0;
-  box-sizing: border-box;
-  background: url("../img/component.jpg") no-repeat;
-  min-height: 908px;
+  background: url("../../../assets/images/bg/component.jpg") no-repeat;
+  height: 908px;
   width: 100%;
   object-fit: fill;
-  background-size: 100%;
+  background-size: 100% 100%;
   overflow: hidden;
 }
 
@@ -98,6 +97,7 @@ header {
 .nav__container {
   align-items: center;
   vertical-align: middle;
+  width: 443px;
 }
 .nav__menu {
   display: flex;
@@ -180,6 +180,7 @@ header {
   color: #545454;
   font-size: 35px;
   margin-top: 0;
+  margin-bottom: 0;
   font-family: "Georgia", serif;
   font-style: normal;
   font-weight: 400;
@@ -278,10 +279,10 @@ header {
   margin: 0 auto;
 }
 .help__wrapper {
-  margin-top: 5px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 5px;
 }
 .help__item {
   height: 113px;
@@ -310,6 +311,11 @@ header {
 
 .help__item:nth-child(5) {
   margin-right: 0;
+}
+
+.help__item:nth-child(6), .help__item:nth-child(7), .help__item:nth-child(8), .help__item:nth-child(9) {
+  margin-bottom: 0px;
+  margin-top: 0;
 }
 
 .donation {
@@ -367,18 +373,19 @@ header {
   font-size: 12px;
   line-height: 18px;
   max-height: 72px;
+  margin-top: 20px;
 }
 
 .footer {
-  background: url("../img/footer-bg.jpg") no-repeat;
+  background: url("../../../assets/images/bg/footer-bg.jpg") no-repeat;
   object-fit: fill;
-  background-size: 100%;
+  background-size: 100% 100%;
   position: relative;
   height: 350px;
   padding: 40px;
 }
 .footer__info {
-  width: 298px;
+  max-width: 310px;
   height: 234px;
 }
 .footer__heading {
@@ -413,4 +420,113 @@ header {
 .footer__info:last-child {
   margin-left: 160px;
   width: 310px;
+}
+
+@media (max-width: 1280px) {
+  .container__main {
+    width: 708px;
+  }
+  .container__about {
+    flex-direction: column-reverse;
+    width: 437px;
+  }
+  .container__help {
+    width: 630px;
+  }
+  .container__footer {
+    width: 708px;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100%;
+  }
+  main {
+    height: 1165px;
+    padding: 30px;
+  }
+  header {
+    width: 708px;
+    margin-top: 0px;
+  }
+  .logo__dog {
+    left: auto;
+    right: 30px;
+    width: 569px;
+    height: 593px;
+  }
+  .main__heading {
+    max-width: 380px;
+    margin: 60px 0px 0px 0px;
+  }
+  .header__info {
+    margin: 0 auto;
+  }
+  .about {
+    height: 1048px;
+  }
+  .about__info {
+    margin: 0px 0px 80px 0px;
+  }
+  .about__dog {
+    margin: 0 auto;
+    padding: 0;
+    width: 300px;
+  }
+  .slider__item:nth-child(3) {
+    display: none;
+  }
+  .help__wrapper {
+    justify-content: space-between;
+    margin-top: 60px;
+  }
+  .help__item {
+    width: 170px;
+    height: 113px;
+    margin: 0px;
+  }
+  .help__descr {
+    white-space: nowrap;
+  }
+  .help__item:nth-child(2), .help__item:nth-child(5), .help__item:nth-child(8) {
+    margin: 0 60px;
+  }
+  .help__item:nth-child(4), .help__item:nth-child(5), .help__item:nth-child(6) {
+    margin-top: 55px;
+    margin-bottom: 55px;
+  }
+  .donation {
+    flex-direction: column-reverse;
+    height: 783px;
+  }
+  .donation__dog {
+    margin: 0 auto;
+    width: 505px;
+    height: 261px;
+    margin-top: 60px;
+  }
+  .donation__info {
+    margin: 0 auto;
+  }
+  .footer {
+    width: 768px;
+    height: 639px;
+    padding: 30px;
+    padding-bottom: 0;
+  }
+  .footer__dog {
+    margin: 0;
+    display: block;
+    height: 310px;
+    margin-top: 65px;
+  }
+  .footer__info:first-child {
+    margin-right: 60px;
+    width: 290px;
+  }
+  .footer__heading {
+    font-size: 33px;
+    margin-top: 0;
+  }
+  .item:nth-child(3), .item:nth-child(2) {
+    margin-top: 33px;
+  }
 }

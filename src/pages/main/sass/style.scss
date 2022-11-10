@@ -9,16 +9,16 @@
 body {
     box-sizing: border-box;
     margin: 0;
+    max-width: 100%;
     // position: relative;
 }
 h5 {
     margin: 0;
 }
 .container {
-    &__main {
+    &__main, &__help {
         width: 1200px;
         margin: 0 auto;
-        height: 100%;
     }
     &__about {
         display: flex;
@@ -27,6 +27,7 @@ h5 {
         margin: 0 auto;
     }
     &__footer {
+        overflow: hidden;
         display: flex;
         width: 1200px;
         margin: 0 auto;
@@ -52,3 +53,4 @@ h5 {
 @import 'help';
 @import 'donation';
 @import 'footer';
+@import 'media';

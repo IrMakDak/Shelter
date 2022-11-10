@@ -9,10 +9,10 @@ gulp.task('server', function() {
 		}
 	});
 
-	gulp.watch("src/pages/*.html").on('change', browserSync.reload);
+	// gulp.watch("src/pages/*.html").on('change', browserSync.reload);
 });
 gulp.task('sass', function() {
-    return gulp.src('src/pages/main/sass/*.scss') 
+    return gulp.src('src/pages/main/sass/*.scss') // Gets all files ending with .scss in app/scss and children dirs
         .pipe(sass())
         .pipe(gulp.dest('src/pages/main/css/'))
         .pipe(browserSync.stream());
@@ -22,4 +22,4 @@ gulp.task('sass', function() {
 gulp.task('watch', function(){
     gulp.watch("src/pages/main/sass/*.+(scss|sass)", gulp.parallel('sass'));
 });
-gulp.task('default', gulp.parallel('watch', 'server', 'sass'));
+gulp.task('default', gulp.parallel('watch', 'server','sass'));

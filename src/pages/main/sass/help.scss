@@ -6,10 +6,10 @@
         margin: 0 auto;
     }
     &__wrapper {
-        margin-top: 5px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        margin-top: 5px;
     }
     &__item {
         height: 113px;
@@ -38,4 +38,8 @@
 }
 .help__item:nth-child(5) {
     margin-right: 0;
+}
+.help__item:nth-child(6), .help__item:nth-child(7), .help__item:nth-child(8), .help__item:nth-child(9){
+    margin-bottom: 0px;
+    margin-top: 0;
 }

@@ -99,12 +99,14 @@ header {
     align-items: center;
     padding: 15px 45px;
     border: 0;
+    margin-top: 42px;
+    cursor: pointer;
+}
+.btn__text {
     color: #292929;
     font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
     line-height: 130%;
-    margin-top: 42px;
-    cursor: pointer;
 }

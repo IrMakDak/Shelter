@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>About the shelter</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
         <div class="container__main">
             <header>
                 <div class="logo__container">
-                    <div class="logo logo__title">Cozy House</div>
+                    <h1 class="logo logo__title">Cozy House</h1>
                     <div class="logo logo__subtitle">Shelter for pets in Boston</div>
                 </div>
                 <div class="nav__container">
@@ -20,18 +20,21 @@
                         <div class="nav__item">About the shelter
                             <div class="nav__item_selected"></div>
                         </div>
-                        <div class="nav__item">Our pets</div>
-                        <div class="nav__item">Help the shelter</div>
-                        <div class="nav__item">Contacts</div>
+                        <div class="nav__item">
+                            <a href="http://127.0.0.1:5500/src/pages/pets/">Our pets</a></div>
+                        <div class="nav__item"><a href="#help">Help the shelter</a>
+                        </div>
+                        <div class="nav__item"><a href="#contacts">Contacts</a></div>
                     </nav>
                 </div>
+                <div class="hamburger">&#9776;</div>
             </header>
             <div class="header__info">
                 <h2 class="heading main__heading">Not only people need a house</h2>
                 <div class="subheading main__subheading">
                     We offer to give a chance to a little and nice puppy with an extremely wide and open heart. He or she will love you more than anybody else in the world, you will see!
                 </div>
-                <button class="btn__primary">Make a friend</button>
+                <button class="btn__primary"><a href="#friend" class="btn__text">Make a friend</a></button>
             </div>
         </div>
         <img src="../../assets/images/png/start-screen-puppy.png" alt="dog" class="logo__dog">
@@ -50,53 +53,61 @@
             </div>
         </div>
     </section>
-    <section class="homeless">
+    <section class="homeless" id="friend">
         <h3 class="heading homeless__heading">Our friends who are looking for a house</h3>
         <div class="slider">
-            <div class="slider__item">
-                <img src="../../assets/images/slider/katrine.jpg" alt="Katrine" class="slider__img"></img>
-                <div class="slider__name">Katrine</div>
-                <button class="slider__more">Learn more</button>
-            </div>
-            <div class="slider__item">
-                <img src="../../assets/images/slider/pets-jennifer.jpg" alt="Jennifer" class="slider__img"></img>
-                <div class="slider__name">Jennifer</div>
-                <button class="slider__more">Learn more</button>
-            </div>
-            <div class="slider__item">
-                <img src="../../assets/images/slider/pets-woody.jpg" alt="Woody" class="slider__img"></img>
-                <div class="slider__name">Woody</div>
-                <button class="slider__more">Learn more</button>
-            </div>
-            <div class="slider__item" style="display: none">
-                <img src="../../assets/images/slider/pets-sophia.jpg" alt="Sophia" class="slider__img"></img>
-                <div class="slider__name">Sophia</div>
-                <button class="slider__more">Learn more</button>
-            </div>
-            <div class="slider__item" style="display: none">
-                <img src="../../assets/images/slider/pets-timmy.jpg" alt="Timmy" class="slider__img"></img>
-                <div class="slider__name">Timmy</div>
-                <button class="slider__more">Learn more</button>
-            </div>
-            <div class="slider__item" style="display: none">
-                <img src="../../assets/images/slider/pets-charly.jpg" alt="Charly" class="slider__img"></img>
-                <div class="slider__name">Charly</div>
-                <button class="slider__more">Learn more</button>
-            </div>
-            <div class="slider__item" style="display: none">
-                <img src="../../assets/images/slider/pets-scarlet.jpg" alt="Scarlett" class="slider__img"></img>
-                <div class="slider__name">Scarlett</div>
-                <button class="slider__more">Learn more</button>
-            </div>
-            <div class="slider__item" style="display: none">
-                <img src="../../assets/images/slider/pets-freddie.jpg" alt="Freddie" class="slider__img"></img>
-                <div class="slider__name">Freddie</div>
-                <button class="slider__more">Learn more</button>
+            <div class="slider__wrapper">
+                <div class="slider__round slider__prev">
+                    <div class="slider__indicator">&larr;</div>
+                </div>
+                <div class="slider__item show first-slide" data-slide="0">
+                    <img src="../../assets/images/slider/katrine.jpg" alt="Katrine" class="slider__img"></img>
+                    <div class="slider__name">Katrine</div>
+                    <button class="slider__more">Learn more</button>
+                </div>
+                <div class="slider__item show second-slide" data-slide="1">
+                    <img src="../../assets/images/slider/pets-jennifer.jpg" alt="Jennifer" class="slider__img"></img>
+                    <div class="slider__name">Jennifer</div>
+                    <button class="slider__more">Learn more</button>
+                </div>
+                <div class="slider__item show third-slide" data-slide="2">
+                    <img src="../../assets/images/slider/pets-woody.jpg" alt="Woody" class="slider__img"></img>
+                    <div class="slider__name">Woody</div>
+                    <button class="slider__more">Learn more</button>
+                </div>
+                <div class="slider__item hide" data-slide="3">
+                    <img src="../../assets/images/slider/pets-sophia.jpg" alt="Sophia" class="slider__img"></img>
+                    <div class="slider__name">Sophia</div>
+                    <button class="slider__more">Learn more</button>
+                </div>
+                <div class="slider__item hide" data-slide="4">
+                    <img src="../../assets/images/slider/pets-timmy.jpg" alt="Timmy" class="slider__img"></img>
+                    <div class="slider__name">Timmy</div>
+                    <button class="slider__more">Learn more</button>
+                </div>
+                <div class="slider__item hide" data-slide="5">
+                    <img src="../../assets/images/slider/pets-charly.jpg" alt="Charly" class="slider__img"></img>
+                    <div class="slider__name">Charly</div>
+                    <button class="slider__more">Learn more</button>
+                </div>
+                <div class="slider__item hide" data-slide="6">
+                    <img src="../../assets/images/slider/pets-scarlet.jpg" alt="Scarlett" class="slider__img"></img>
+                    <div class="slider__name">Scarlett</div>
+                    <button class="slider__more">Learn more</button>
+                </div>
+                <div class="slider__item hide" data-slide="7" style="left: -100%; transition-duration: 0s">
+                    <img src="../../assets/images/slider/pets-freddie.jpg" alt="Freddie" class="slider__img"></img>
+                    <div class="slider__name">Freddie</div>
+                    <button class="slider__more">Learn more</button>
+                </div>
+                <div class="slider__round slider__next">
+                    <div class="slider__indicator">&rarr;</div>
+                </div>
             </div>
         </div>
         <button class="btn__under-slider">Get to know the rest</button>
     </section>
-    <section class="help">
+    <section class="help" id="help">
         <div class="container__help">
             <h3 class="heading help__heading">How you can help our shelter</h3>
             <div class="help__wrapper">
@@ -153,7 +164,7 @@
            </div>
         </div>
     </section>
-    <footer class="footer">
+    <footer class="footer" id="contacts">
         <div class="container__footer">
             <div class="footer__info">
                 <h3 class="heading footer__heading">For questions and suggestions</h3>
@@ -180,5 +191,7 @@
             <img src="../../assets/images/png/footer-puppy.png" alt="dogs" class="footer__dog">
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

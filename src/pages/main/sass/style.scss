@@ -35,6 +35,17 @@ h5 {
 
     }
 }
+.hamburger {
+    display: none;
+    color: #F1CDB3;
+    width: 30px;
+    height: 22px;
+    position: absolute;
+    right: 53px;
+    font-size: 40px;
+
+    cursor: pointer;
+}
 .heading {
     width: 370px;
     letter-spacing: 0.06em;
@@ -47,6 +58,19 @@ h5 {
     font-weight: 400;
     line-height: 130%;
 }
+a {
+    text-decoration: none;
+}
+.hide {
+    left: 100%;
+    transition-duration: 0; 
+}
+.hide__r {
+    left: -100%;
+    transition-duration: 0;
+}
+
+
 @import 'main';
 @import 'aboutShelter';
 @import 'homeless';
@@ -54,3 +78,4 @@ h5 {
 @import 'donation';
 @import 'footer';
 @import 'media';
+@import 'media-footer';

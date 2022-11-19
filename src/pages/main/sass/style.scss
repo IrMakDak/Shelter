@@ -10,7 +10,6 @@ body {
     box-sizing: border-box;
     margin: 0;
     max-width: 100%;
-    // position: relative;
 }
 h5 {
     margin: 0;
@@ -62,20 +61,16 @@ a {
     text-decoration: none;
 }
 .hide {
-    left: 100%;
-    transition-duration: 0; 
-}
-.hide__r {
-    left: -100%;
-    transition-duration: 0;
+    display: none;
 }
 
 
-@import 'main';
-@import 'aboutShelter';
-@import 'homeless';
-@import 'help';
-@import 'donation';
-@import 'footer';
-@import 'media';
-@import 'media-footer';
+@import '_main';
+@import '_about';
+@import '_homeless';
+@import '_help';
+@import '_donation';
+@import '_footer';
+@import '_modal';
+@import '_media';
+@import '_media-footer';

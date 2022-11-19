@@ -1,199 +1,208 @@
+//GET DATA FROM JSON-SERVER
+//to start json-server ---> npx json-server src/pages/petsDB.json
+const getResource = async (url) => {
+    const res = await fetch(url);
+    if (!res.ok) {
+        throw new Error(`Could not fetch ${url}, status ${res.status}`);
+    }
+    return await res.json();
+};
+//AFTER DOM LOADED
 window.addEventListener('DOMContentLoaded', function() {
 
-    // SLIDER
-    function slider({slide, nextArrow, prevArrow, wrapper}) {
-
-        const slides = document.querySelectorAll(slide),
-            prev = document.querySelector(prevArrow),
-            next = document.querySelector(nextArrow),
-            sliderWrapper = document.querySelector(wrapper);
-
-            let visibleSlides = [];
-            slides.forEach(item => {
-                if (item.classList.contains('show')) {
-                    visibleSlides.push(item);
-                }
-            })
-
-        next.addEventListener('click', () => {
-
-            let slideToShowNext = +(visibleSlides[2].getAttribute('data-slide')) + 1;
-            if (slideToShowNext < 8) {
-                showNextSlide(slideToShowNext);
-            } else {
-                showNextSlide(0);
-            }
-
-            let slideToHide = +(visibleSlides[0].getAttribute('data-slide'));
-            visibleSlides = visibleSlides.slice(1);
-            hideSlide(slideToHide);
-            
-        })
-        function showNextSlide(attr) {
-            if (attr === 0) {
-                slides.forEach(i => {
-                    i.style = "";
-                    if (('' + attr) === i.getAttribute('data-slide')) {
-                        i.classList.remove('hide');
-                        i.classList.add('third-slide');
-                        visibleSlides.push(i);
-                    }
-                    if (('' + 6) === i.getAttribute('data-slide')) {
-                        i.classList.remove('second-slide');
-                        i.classList.add('first-slide');
-                    }
-                    if (('' + 7) === i.getAttribute('data-slide')) {
-                        i.classList.remove('third-slide');
-                        i.classList.add('second-slide');
-                    }
-                })
-            } 
-            if (attr === 1) {
-                slides.forEach(i => {
-                    i.style="";
-                    if (('' + attr) === i.getAttribute('data-slide')) {
-                        i.classList.remove('hide');
-                        i.classList.add('third-slide');
-                        visibleSlides.push(i);
-                    }
-                    if (('' + 0) === i.getAttribute('data-slide')) {
-                        i.classList.remove('third-slide');
-                        i.classList.add('second-slide');
-                    }
-                    if (('' + 7) === i.getAttribute('data-slide')) {
-                        i.classList.remove('second-slide');
-                        i.classList.add('first-slide');
-                    }
-                })
-            }
-            if (attr !== 0 && attr !== 1) {
-                slides.forEach(i => {
-                    i.style = "";
-                    if (('' + attr) === i.getAttribute('data-slide')) {
-                        i.classList.remove('hide');
-                        i.classList.add('third-slide');
-                        visibleSlides.push(i);
-                    }
-                    if (('' + (attr - 1)) === i.getAttribute('data-slide')) {
-                        i.classList.remove('third-slide');
-                        i.classList.add('second-slide');
-                    }
-                    if (('' + (attr - 2)) === i.getAttribute('data-slide')) {
-                        i.classList.remove('second-slide');
-                        i.classList.add('first-slide');
-                    }
-                })
-            }
-        }
-        function hideSlide(attr) {
-            slides.forEach(i => {
-                if (('' + attr) === i.getAttribute('data-slide')) {
-                    if (i.classList.contains('first-slide')) {
-                        i.classList.remove('first-slide');
-                        i.style = "left: -100%; transition-duration: 1.5s";
-                        i.classList.add('hide');
-                    }
-                    if (i.classList.contains('third-slide')) {
-                        i.classList.remove('third-slide');
-                        i.style = "left: 100%; transition-duration: 0.5s";
-                        i.classList.add('hide');
-                    }
-                }
-            })
-        }
-        prev.addEventListener('click', () => {
-
-            let slideToShowPrev = +(visibleSlides[0].getAttribute('data-slide')) - 1;
-
-            if (slideToShowPrev < 0) {
-                showPrevSlide(7);
-            } else {
-                showPrevSlide(slideToShowPrev);
-            }
-            let slideToHide = +(visibleSlides[3].getAttribute('data-slide'));
-            visibleSlides = visibleSlides.slice(0, 3);
-
-            hideSlide(slideToHide);
-        })
-        function showPrevSlide(attr) {
-            console.log(attr);
-            if (attr === 7) {
-                slides.forEach(i => {
-                    i.style = "";
-                    if (('' + attr) === i.getAttribute('data-slide')) {
-                        i.classList.remove('hide');
-                        i.classList.add('first-slide');
-                        visibleSlides.unshift(i);
-                    }
-                    if (('' + 0) === i.getAttribute('data-slide')) {
-                        i.classList.remove('first-slide');
-                        i.classList.add('second-slide');
-                    }
-                    if (('' + 1) === i.getAttribute('data-slide')) {
-                        i.classList.remove('second-slide');
-                        i.classList.add('third-slide');
-                    }
-                    if (('' + 6) === i.getAttribute('data-slide')) {
-                        i.style="left: -100%; transition-duration: 0s";
-                    }
-                })
-            }
-            if (attr === 6) {
-                slides.forEach(i => {
-                    i.style = "";
-                    if (('' + attr) === i.getAttribute('data-slide')) {
-                        i.classList.remove('hide');
-                        i.classList.add('first-slide');
-                        visibleSlides.unshift(i);
-                    }
-                    if (('' + 7) === i.getAttribute('data-slide')) {
-                        i.classList.remove('first-slide');
-                        i.classList.add('second-slide');
-                    }
-                    if (('' + 0) === i.getAttribute('data-slide')) {
-                        i.classList.remove('second-slide');
-                        i.classList.add('third-slide');
-                    }
-                    if (('' + 5) === i.getAttribute('data-slide')) {
-                        i.style="left: -100%; transition-duration: 0s";
-                    }
-                })
-            }
-            if (attr !== 7 && attr !== 6) {
-                slides.forEach(i => {
-                    i.style = "";
-                    if (('' + attr) === i.getAttribute('data-slide')) {
-                        i.classList.remove('hide');
-                        i.classList.add('first-slide');
-                        visibleSlides.unshift(i);
-                    }
-                    if (('' + (attr + 1)) === i.getAttribute('data-slide')) {
-                        i.classList.remove('first-slide');
-                        i.classList.add('second-slide');
-                    }
-                    if (('' + (attr + 2)) === i.getAttribute('data-slide')) {
-                        i.classList.remove('second-slide');
-                        i.classList.add('third-slide');
-                    }
-                    if (('' + (attr - 1)) === i.getAttribute('data-slide')) {
-                        i.style="left: -100%; transition-duration: 0s";
-                    }
-                    if (attr === 0) {
-                        slides.forEach(i => {
-                            if (('' + 7) === i.getAttribute('data-slide')) {
-                                i.style="left: -100%; transition-duration: 0s";
-                            }
-                        })
-                    }
-                })
-            }
-        }
+    //GET THREE ITEMS OF SLIDER
+    createModal();
+    closeModal();
+    let width = window.innerWidth;
+    if (width > 1279) {
+        createSlider('flex');
+        renderSlideById([1, 2, 3]);
     }
+    //GET TWO ITEMS OF SLIDER
+    if (width > 767 && width <= 1279) {
+        createSlider('flex');
+        renderSlideById([1, 2]);
+    }
+    //GET ONE ITEM OF SLIDER
+    if (width <= 767 && width > 319) {
+        createSlider('column');
+        renderSlideById(1);
+    }
+    
+    // LISTENERS FOR BUTTONS
+    let firstSlideId = 1,
+        secondSlideId = 2,
+        thirdSlideId = 3;
+    const next = document.querySelector('.slider__next'),
+        prev = document.querySelector('.slider__prev');
 
-    slider ({
-        slide: '.slider__item',
-        nextArrow: '.slider__next',
-        prevArrow: '.slider__prev',
-        wrapper: '.slider__wrapper',
+    next.addEventListener('click', () => {
+        document.querySelector('.slider__item').remove();
+
+        firstSlideId > 7 ? firstSlideId = 1 : firstSlideId++;
+        secondSlideId > 7 ? secondSlideId = 1 : secondSlideId++;
+        thirdSlideId > 7 ? thirdSlideId = 1 : thirdSlideId++;
+
+        let width = window.innerWidth;
+        if (width > 1279) {
+            renderSlideById(thirdSlideId);
+        }
+        if (width > 767 && width <= 1279) {
+            renderSlideById(secondSlideId);
+        }
+        if (width <= 767 && width > 319) {
+            renderSlideById(firstSlideId);
+        }
+    })
+    prev.addEventListener('click', () => {
+        
+        document.querySelector('.slider__wrapper').lastChild.remove();
+
+        firstSlideId < 2 ? firstSlideId = 8 : firstSlideId--;
+        secondSlideId < 2 ? secondSlideId = 8 : secondSlideId--;
+        thirdSlideId < 2 ? thirdSlideId = 8 : thirdSlideId--;
+        
+        renderSlideById(firstSlideId, 'prev');
     })
 })
+//GET ANY SLIDE BY ID
+async function renderSlideById(numberOfSlide, dir = 'next') {
+    if (typeof(numberOfSlide) == 'number') {
+
+        await getResource("http://localhost:3000/petsDB")
+        .then(data => {
+            data.forEach(({img, name, type, descr, age, inoculations, diseases, parasites, id}) => {
+                if (id === numberOfSlide) {
+                    new PetSlide(img, name, type, descr, age, inoculations, diseases, parasites, id, dir, '.slider__wrapper').render();
+                }
+            })
+        })
+    } 
+    if (typeof(numberOfSlide) == 'object') {
+        for (let num of numberOfSlide) {
+            await renderSlideById(num);
+        }
+    }
+}
+//CREATE SLIDER WRAPPER & NEXT & PREV BTNS
+function createSlider(direction) {
+    const slider = document.querySelector('.slider'),
+        prev = document.createElement('div'),
+        next = document.createElement('div');
+
+    prev.classList.add('slider__round', 'slider__prev');
+    next.classList.add('slider__round', 'slider__next');
+    prev.innerHTML = `
+        <div class="slider__indicator">&larr;</div>
+    `;
+    next.innerHTML = `
+        <div class="slider__indicator">&rarr;</div>
+    `;
+    const wrapperForSlider = document.createElement('div');
+    wrapperForSlider.classList.add('slider__wrapper');
+    if (direction === 'column') {
+        slider.append(wrapperForSlider, prev, next);
+    } else {
+        slider.append(prev, wrapperForSlider, next);
+    }
+}
+//CREATE MODAL WINDOW
+function createModal() {
+    const modal = document.createElement('div');
+    modal.classList.add('modal', 'hide');
+    modal.innerHTML = `
+        <div class="modal__container">
+            <div class="slider__round modal__round">
+                <img src="../../assets/images/icons/close.png" alt="close" class="slider__indicator modal__close">
+            </div>
+        </div>
+    `;
+    document.body.append(modal);
+}
+// CLOSE MODAL
+function closeModal() {
+    const modal = document.querySelector('.modal');
+    const close = document.querySelector(".modal__round");
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            hideModal(modal);
+        }
+    })
+    close.addEventListener('click', () => {
+        hideModal(modal);
+    })
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 'Escape' && !(modal.classList.contains('hide'))) {
+            hideModal(modal);
+        }
+    })
+}
+//HIDE BACKGROUND OF MODAL WINDOW
+function hideModal(modal) {
+    document.querySelector(".modal__window").remove();
+    modal.classList.add('hide');
+}
+//CREATE PET-SLIDE
+class PetSlide {
+    constructor(img, name, type, descr, age, inoculations, diseases, parasites, id, direction, parent) {
+        this.img = img,
+        this.name = name,
+        this.id = id,
+        this.direction = direction,
+        this.type = type,
+        this.descr = descr,
+        this.age = age,
+        this.inoculations = inoculations,
+        this.diseases = diseases,
+        this.parasites = parasites,
+        this.parent = document.querySelector(parent)
+    }
+    render() {
+        const item = document.createElement('div');
+        item.classList.add('slider__item');
+        item.innerHTML = `
+            <img src='${this.img}' alt=${this.name} class="slider__img">
+            <div class="slider__name">${this.name}</div>
+            <button class="slider__more">Learn more</button>
+            </div>
+        `;
+        this.direction === 'next' ? this.parent.append(item) : this.parent.prepend(item);
+
+        hoverToSliderItem(item);
+
+        item.addEventListener('click', () => {
+            const modal = document.createElement('div');
+            modal.classList.add('modal__window');
+            modal.innerHTML = `
+                <img class="modal__img" src=${this.img} alt=${this.name}>
+                <div class="modal__info">
+                    <div class="modal__info_name">${this.name}</div>
+                    <div class="modal__info_type">${this.type}</div>
+                    <div class="modal__info_descr">${this.descr}</div>
+                    <ul class="modal__ul">
+                        <li ><span class="big__text">Age: </span><span class="modal__li">${this.age}</span></li>
+                        <li><span class="big__text">Inoculations: </span> <span class="modal__li">${this.inoculations}</span></li>
+                        <li><span class="big__text">Diseases: </span><span class="modal__li">${this.diseases}</span></li>
+                        <li><span class="big__text">Parasites: </span><span class="modal__li">${this.parasites}</span></liss=>
+                    </ul>
+                </div>
+            `;
+            const parent = document.querySelector('.modal__container'),
+                modalHidden = document.querySelector('.modal');
+            modalHidden.classList.remove('hide');
+            parent.append(modal);
+        })
+    }
+}
+// HOVER TO SLIDER ITEM
+function hoverToSliderItem(item) {
+    
+    item.addEventListener('mouseover', () => {
+        let btn = item.querySelector('.slider__more');
+        btn.classList.add('slider__more_active');
+    })
+    item.addEventListener('mouseout', () => {
+        let btn = item.querySelector('.slider__more');
+        btn.classList.remove('slider__more_active');
+    })
+}

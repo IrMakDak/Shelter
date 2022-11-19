@@ -1,4 +1,4 @@
-@media (max-width: 1280px) {
+@media (max-width: 1279px) {
     .container {
         &__main {
             width: 708px;
@@ -21,7 +21,10 @@
     }
     .logo {
         &__dog {
-            left: auto;
+            display: block;
+            position: static;
+            margin-top: 100px;
+            margin-left: 139px;
             right: 30px;
             width: 569px;
             height: 593px;
@@ -46,8 +49,10 @@
         }
     }
     .slider {
-        &__item:nth-child(3) {
-            display: none;
+        width: 708px;
+        &__wrapper {
+            margin: 60px 12px;
+            width: 580px;
         }
     }
     .help {
@@ -87,9 +92,38 @@
     .hamburger {
         display: none;
     }
+    .modal {
+        &__container {
+            width: 682px;
+            height: 402px;
+        }
+        &__window {
+            width: 630px;
+            height: 350px;
+        }
+        &__img {
+            width: 350px;
+            height: 350px;
+        }
+        &__info {
+            width: 260px;
+            height: 303px;
+            margin-left: 11px;
+            margin-top: 10px;
+            overflow: hidden;
+            &_descr {
+                margin-top: 20px;
+                font-size: 13px;
+                line-height: 110%;
+            }
+        }
+        &__ul {
+            margin-top: 20px;
+        }
+    }
 }
 
-@media(max-width: 768px) {
+@media(max-width: 767px) {
     .heading {
         font-size: 25px;
     }
@@ -99,7 +133,7 @@
     .container {
         &__main {
             width: 300px;
-            margin: 0;
+            margin: 0 auto;
         }
         &__about {
             width: 300px;
@@ -136,9 +170,13 @@
     }
     .logo{
         &__dog {
+            position: inherit;
+            display: block;
             width: 260px;
             height: 271.77px;
             right: 10px;
+            margin: 0 auto;
+            margin-top: 105px;
         }
     }
     .about {
@@ -171,15 +209,26 @@
         padding: 42px 10px;
         height: 791px;
         &__heading {
-            width: 100%;
+            width: 300px;
         }
     }
     .slider {
-        &__item:nth-child(2) {
-            display: none;
+        width: 270px;
+        flex-wrap: wrap;
+        height: 549px;
+        margin-bottom: 42px;
+        &__container {
+            width: 300px;
         }
         &__item {
+            margin: 0px auto;
+        }
+        &__wrapper {
+            height: 435px;
             margin: 42px auto 20px auto;
+        }
+        &__round {
+            margin-top: 0;
         }
     }
     .help {
@@ -216,6 +265,7 @@
         &__dog {
             width: 260px;
             margin-top: 42px;
+            height: 135.2px;
         }
         &__info {
             width: 100%;
@@ -241,6 +291,8 @@
         &__legal {
             width: 280px;
             height: 90px;
+            margin: 0 auto;
+            margin-top: 20px;
         }
     }
 }

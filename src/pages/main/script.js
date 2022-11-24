@@ -37,7 +37,9 @@ window.addEventListener('DOMContentLoaded', function() {
         prev = document.querySelector('.slider__prev');
 
     next.addEventListener('click', () => {
-        document.querySelector('.slider__item').remove();
+        let oldItem = document.querySelector('.slider__item');
+        oldItem.style = "transform: translateX(-1000px); transition-duration: 0.3s";
+        setTimeout(() => oldItem.remove(), 200);
 
         firstSlideId > 7 ? firstSlideId = 1 : firstSlideId++;
         secondSlideId > 7 ? secondSlideId = 1 : secondSlideId++;
@@ -55,8 +57,9 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     })
     prev.addEventListener('click', () => {
-        
-        document.querySelector('.slider__wrapper').lastChild.remove();
+        let oldItem = document.querySelector('.slider__wrapper').lastChild;
+        oldItem.style = "transform: translateX(1000px); transition-duration: 0.3s";
+        setTimeout(() => oldItem.remove(), 200);
 
         firstSlideId < 2 ? firstSlideId = 8 : firstSlideId--;
         secondSlideId < 2 ? secondSlideId = 8 : secondSlideId--;
@@ -183,7 +186,10 @@ class PetSlide {
             <button class="slider__more">Learn more</button>
             </div>
         `;
+        this.direction === 'next' ? item.style="transform: translateX(1000px); transition-duration: 0.3s" : item.style="transform: translateX(-1000px); transition-duration: 0.3s";
+
         this.direction === 'next' ? this.parent.append(item) : this.parent.prepend(item);
+        setTimeout(() => item.style="transition-duration: 0.3s", 200);
 
         hoverToSliderItem(item);
 

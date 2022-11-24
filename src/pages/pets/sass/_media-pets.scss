@@ -7,11 +7,11 @@
         margin-top: 0px;
     }
     .friends {
-        height: 1733px;
+        max-height: 1733px;
         &__wrapper {
             margin-top: 30px;
             width: 580px;
-            height: 1365px;
+            max-height: 1365px;
 
         }
         .slider__item {
@@ -107,7 +107,7 @@
         color:#FAFAFA;
     }
     .friends {
-        height: 1649px;
+        max-height: 1649px;
         &__wrapper {
             width: 270px;
             margin: 42px auto;
@@ -121,5 +121,8 @@
     .arrows {
         width: 300px;
         margin-top: 0;
+    }
+    .hide {
+        display: none;
     }
 }

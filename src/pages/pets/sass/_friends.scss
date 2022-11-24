@@ -1,5 +1,5 @@
 .friends {
-    height: 1342px;
+    max-height: 1342px;
     background: #F6F6F6;
     &__title {
         display: block;
@@ -19,7 +19,7 @@
         justify-content: space-between;
         width: 1200px;
         margin: 0 auto;
-        height: 930px;
+        max-height: 930px;
         margin-top: 45px;
         align-content: space-between;
         padding: 15px 0px;

@@ -16,7 +16,6 @@ h5 {
 }
 a {
     text-decoration: none;
-    color: #545454;
 }
 .hide {
     display: none;
@@ -57,16 +56,17 @@ a {
     line-height: 130%;
 }
 .hamburger {
-    position: absolute;
+    position: fixed;
     display: none;
     color: #F1CDB3;
     width: 30px;
-    height: 22px;
-    top: 40px;
-    right:20%;
-    font-size: 40px;
+    height: 35px;
+    top: 49px;
+    right: 53px;
+    font-size: 34px;
     transition-duration: 0.3s;
     z-index: 30;
+    transform: translate3d(10px, -10px, 0px);
 
     cursor: pointer;
 }
@@ -74,7 +74,7 @@ a {
     position: fixed;
     top: 0;
     right: 0;
-    width: 100%;
+    width: 320px;
     height: 100%;
     background: #292929;
     padding: 10px;

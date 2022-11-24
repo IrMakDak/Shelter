@@ -17,24 +17,120 @@ window.addEventListener('DOMContentLoaded', function() {
         prev = document.querySelector('.slider__prev'),
         doubleNext = document.querySelector('.slider__next_double'),
         doublePrev = document.querySelector('.slider__prev_double'),
-        sliderNum = document.querySelector('.slider__num');
-    
+        sliderNum = document.querySelector('.slider__num'),
+        countOfAllSlides = 8;
 
     let width = window.innerWidth;
+    let firstItem = 1;
+        
     if (width > 1279) {
-        renderSlides(8);
+        visibleItems = 8;
+        renderSlidesInRange(visibleItems);
         makeArrowGrey(prev, doublePrev, next, doubleNext);
     }
     //GET TWO ITEMS OF SLIDER
     if (width > 767 && width <= 1279) {
-        renderSlides(6);
+        visibleItems = 6;
+        renderSlidesInRange(visibleItems);
         makeArrowGrey(prev, doublePrev);
     }
     //GET ONE ITEM OF SLIDER
     if (width <= 767 && width > 319) {
-        renderSlides(3);
+        visibleItems = 3;
+        renderSlidesInRange(visibleItems);
         makeArrowGrey(prev, doublePrev);
     }
+    let lastItem = visibleItems;
+    let sliderNumber = +sliderNum.textContent;
+
+    //LISTENERS FOR "OUR PETS"
+    next.addEventListener('click', () => {
+        if (!next.classList.contains('slider__round_grey')) {
+            //delete old page
+            removeAllPetItems();
+            //count number of first item
+            firstItem = lastItem + 1;
+            console.log('first - ', firstItem);
+
+            // make arrows grey/active & count number of last slide
+            if (lastItem * 2 >= countOfAllSlides) {
+                makeArrowGrey(next, doubleNext);
+                makeArrowActive(prev, doublePrev);
+                lastItem = countOfAllSlides;
+            } else {
+                makeArrowActive(prev, doublePrev);
+                lastItem = lastItem * 2;
+            }
+            console.log('last - ', lastItem);
+
+            //load new page
+            renderSlidesInRange(lastItem, firstItem);
+
+            //change page number
+            sliderNumber++;
+            sliderNum.textContent = sliderNumber;
+        }
+    })
+    prev.addEventListener('click', () => {
+        if (!prev.classList.contains('slider__round_grey')) {
+            //delete old page
+            removeAllPetItems();
+
+            lastItem = firstItem - 1;
+            
+            // make arrows grey/active
+            firstItem = firstItem - visibleItems;
+            if (firstItem <= 1) {
+                makeArrowGrey(prev, doublePrev);
+                makeArrowActive(next, doubleNext);
+            }
+            console.log('first - ', firstItem);
+            console.log('last - ', lastItem);
+
+            //load new page
+            renderSlidesInRange(lastItem, firstItem);
+
+            //change page number
+            sliderNumber--;
+            sliderNum.textContent = sliderNumber;
+        }    
+    })
+    doubleNext.addEventListener('click', () => {
+        if (!doubleNext.classList.contains('slider__round_grey')) {
+            removeAllPetItems();
+            lastItem = countOfAllSlides;
+            firstItem = lastItem - (countOfAllSlides % visibleItems) + 1;
+            console.log('first - ', firstItem);
+            console.log('last - ', lastItem);
+
+            renderSlidesInRange(lastItem, firstItem);
+
+            makeArrowGrey(next, doubleNext);
+            makeArrowActive(prev, doublePrev);
+
+            sliderNumber = parseInt(countOfAllSlides / visibleItems) + 1;
+            sliderNum.textContent = sliderNumber;
+            console.log(sliderNumber);
+        }
+    })
+    doublePrev.addEventListener('click', () => {
+        if (!doublePrev.classList.contains('slider__round_grey')) {
+            removeAllPetItems();
+            lastItem = visibleItems;
+            firstItem = 1;
+            console.log('first - ', firstItem);
+            console.log('last - ', lastItem);
+
+            renderSlidesInRange(lastItem, firstItem);
+            
+            makeArrowGrey(prev, doublePrev);
+            makeArrowActive(next, doubleNext);
+
+            sliderNumber = 1;
+            sliderNum.textContent = sliderNumber;
+        }
+    })
+    //LISTENER FOR MENU
     const hamburger = document.querySelector('.hamburger'),
             modalMenu = document.querySelector('.menu');
     hamburger.addEventListener('click', () => {
@@ -47,7 +143,20 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     })
 })
-//GET ANY SLIDE BY ID
+//GET ALL SLIDES IN A RANGE
+async function renderSlidesInRange(end, start = 1) {
+    for (let i = start; i <= end; i++) {
+        await getResource("http://localhost:3000/petsDB")
+        .then(data => {
+            data.forEach(({img, name, type, descr, age, inoculations, diseases, parasites, id}) => {
+                if (id === i) {
+                    new PetSlide(img, name, type, descr, age, inoculations, diseases, parasites, id, 'next', '.friends__wrapper').render();
+                }
+            })
+        })
+    }
+}  
+//GET ANY SLIDE FROM 1-ST TO "N"-S
 async function renderSlides(slides) {
     for (let i = 1; i <= slides; i++) {
         await getResource("http://localhost:3000/petsDB")
@@ -60,11 +169,23 @@ async function renderSlides(slides) {
         })
     }
 }
+function removeAllPetItems() {
+    document.querySelectorAll('.slider__item').forEach(i => {
+        i.remove();
+    })
+}
 function makeArrowGrey(...selector) {
     selector.forEach(i => {
         i.classList.remove('slider__round');
         i.classList.add('slider__round_grey');
         i.childNodes[1].classList.add('grey');
+    })
+}
+function makeArrowActive(...selector) {
+    selector.forEach(i => {
+        i.classList.remove('slider__round_grey');
+        i.classList.add('slider__round');
+        i.childNodes[1].classList.remove('grey');
     })
 }
 //CREATE PET-SLIDE
@@ -115,6 +236,7 @@ class PetSlide {
             const parent = document.querySelector('.modal__container'),
                 modalHidden = document.querySelector('.modal');
             modalHidden.classList.remove('hide');
+            document.querySelector('.hamburger').classList.add('hide');
             parent.append(modal);
         })
     }
@@ -166,4 +288,5 @@ function closeModal() {
 function hideModal(modal) {
     document.querySelector(".modal__window").remove();
     modal.classList.add('hide');
+    document.querySelector('.hamburger').classList.remove('hide');
 }

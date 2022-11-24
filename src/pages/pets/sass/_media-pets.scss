@@ -1,0 +1,125 @@
+@media (max-width: 1279px) {
+    .container__friends {
+        padding: 60px 30px 70px 30px;
+    }
+    header {
+        width: 708px;
+        margin-top: 0px;
+    }
+    .friends {
+        height: 1733px;
+        &__wrapper {
+            margin-top: 30px;
+            width: 580px;
+            height: 1365px;
+
+        }
+        .slider__item {
+            margin: 0;
+        }
+    }
+    .modal {
+        &__container {
+            width: 682px;
+            height: 402px;
+        }
+        &__window {
+            width: 630px;
+            height: 350px;
+        }
+        &__img {
+            width: 350px;
+            height: 350px;
+        }
+        &__info {
+            width: 260px;
+            height: 303px;
+            margin-left: 11px;
+            margin-top: 10px;
+            overflow: hidden;
+            &_descr {
+                margin-top: 20px;
+                font-size: 13px;
+                line-height: 110%;
+            }
+        }
+        &__ul {
+            margin-top: 20px;
+        }
+    }
+}
+
+@media(max-width: 767px) {
+    .pets {
+        width: 300px;
+        margin: 30px auto;
+    }
+    .container__friends {
+        padding: 42px 10px 42px 10px;
+    }
+    .nav__container {
+        display: none;
+    }
+    .nav__item_modal {
+        color: #CDCDCD;
+    }
+    .modal {
+        &__container {
+            width: 271px;
+            min-height: 393px;
+            height: 432px;
+        }
+        &__window {
+            width: 240px;
+            height: 380px;
+            min-height: 341px;
+            box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+            border-radius: 9px;
+        }
+        &__img {
+            display: none;
+        }
+        &__info {
+            width: 220px;
+            height: 100%;
+            min-height: 321px;
+            margin-left: 11px;
+            margin-top: 10px;
+            overflow: hidden;
+            &_name {
+                text-align: center;
+            }
+            &_type {
+                text-align: center;
+            }
+            &_descr {
+                text-align: justify;
+            }
+        }
+        &__ul {
+            margin-top: 24px;
+        }
+    }
+    .hamburger {
+        display: block;
+    }
+    .selected {
+        color:#FAFAFA;
+    }
+    .friends {
+        height: 1649px;
+        &__wrapper {
+            width: 270px;
+            margin: 42px auto;
+        }
+        &__title {
+            width: 300px;
+            font-size: 25px;
+            line-height: 130%;      
+        }
+    }
+    .arrows {
+        width: 300px;
+        margin-top: 0;
+    }
+}

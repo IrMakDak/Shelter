@@ -7,12 +7,16 @@
     &__dog {
         display: block;
         margin-right: 30px;
+        width: 505px;
+        height: 261px;
+        margin-top: 11px;
     }
     &__info {
         width: 380px;
     }
     &__heading {
         margin-bottom: 0;
+        letter-spacing: 0.09em;
     }
     &__bank {
         font-family: 'Georgia';
@@ -21,7 +25,7 @@
         font-size: 15px;
         line-height: 110%;
 
-        letter-spacing: 0.06em;
+        letter-spacing: 0.09em;
 
         color: #545454;
         margin: 20px 0px;
@@ -46,6 +50,7 @@
         font-size: 20px;
         line-height: 115%;
         width: 300px;
+        letter-spacing: 0.11em;
     }
     &__legal {
         width: 100%;

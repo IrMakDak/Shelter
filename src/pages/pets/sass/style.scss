@@ -4,7 +4,7 @@
     font-family: 'Roboto', sans-serif;
     width: 400;
     box-sizing: border-box;
-    color: #fff;
+    color: #545454;
 }
 body {
     box-sizing: border-box;
@@ -13,6 +13,13 @@ body {
 }
 h5 {
     margin: 0;
+}
+a {
+    text-decoration: none;
+    color: #545454;
+}
+.hide {
+    display: none;
 }
 .container {
     &__main, &__help {
@@ -33,21 +40,9 @@ h5 {
         justify-content: space-between;
 
     }
-}
-.hamburger {
-    position: fixed;
-    display: none;
-    color: #F1CDB3;
-    width: 30px;
-    height: 35px;
-    top: 49px;
-    right: 53px;
-    font-size: 34px;
-    transition-duration: 0.3s;
-    z-index: 30;
-    transform: translate3d(10px, -10px, 0px);
-
-    cursor: pointer;
+    &__friends {
+        padding: 80px 40px 100px 40px;
+    }
 }
 .heading {
     width: 370px;
@@ -61,19 +56,44 @@ h5 {
     font-weight: 400;
     line-height: 130%;
 }
-a {
-    text-decoration: none;
-}
-.hide {
+.hamburger {
+    position: absolute;
     display: none;
+    color: #F1CDB3;
+    width: 30px;
+    height: 22px;
+    top: 40px;
+    right:20%;
+    font-size: 40px;
+    transition-duration: 0.3s;
+    z-index: 30;
+
+    cursor: pointer;
 }
-@import '_header';
-@import '_main';
-@import '_about';
-@import '_homeless';
-@import '_help';
-@import '_donation';
-@import '_footer';
-@import '_modal';
-@import '_media';
-@import '_media-footer';
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #292929;
+    padding: 10px;
+    z-index: 20;
+    padding: 30px 10px 0px 10px;
+    &__container {
+        width: 300px;
+        margin: 0 auto;
+    }
+}
+.selected {
+    color:#FAFAFA;
+}
+
+@import '../../main/sass/_footer';
+@import '../../main/sass/_media-footer';
+@import '../../main/sass/_header';
+@import '../../main/sass/_homeless';
+@import '_pets-header';
+@import '_friends';
+@import '../../main/sass/_modal';
+@import '_media-pets';

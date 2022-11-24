@@ -64,6 +64,23 @@ window.addEventListener('DOMContentLoaded', function() {
         
         renderSlideById(firstSlideId, 'prev');
     })
+    //OPEN MENU
+
+    const hamburger = document.querySelector('.hamburger'),
+            modalMenu = document.querySelector('.menu'),
+            logo = document.querySelector('.logo__container');
+    hamburger.addEventListener('click', () => {
+        if (modalMenu.classList.contains('hide')) {
+            logo.classList.add('hide');
+            modalMenu.classList.remove('hide');
+            hamburger.style="transform: rotate(90deg)";
+        } else {
+            modalMenu.classList.add('hide');
+            hamburger.style="";
+            logo.classList.remove('hide');
+        }
+    })
+
 })
 //GET ANY SLIDE BY ID
 async function renderSlideById(numberOfSlide, dir = 'next') {
@@ -206,3 +223,18 @@ function hoverToSliderItem(item) {
         btn.classList.remove('slider__more_active');
     })
 }
+function openMenuWindow(hamburger) {
+    const menuWindow = document.querySelector('.menu'); 
+    if (menuWindow.classList.contains('hide')) {
+        hamburger.removeEventListener('click', () => {  
+            openMenuWindow(hamburger);
+        })
+        menuWindow.classList.remove('hide');
+        hamburger.classList.add('hamburger__open');
+        hamburger.addEventListener('click', () => {
+            menuWindow.classList.add('hide');
+            hamburger.classList.remove('hamburger__open');
+        })
+    }
+}
+

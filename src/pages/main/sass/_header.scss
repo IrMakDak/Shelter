@@ -1,0 +1,100 @@
+header {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 60px;
+    width: 1200px;
+    height: 60px;
+    justify-content: space-between;
+}
+.logo {
+    font-style: normal;
+    font-weight: 400;
+    &__title {
+        font-family: 'Georgia', serif;
+        font-size: 32px;
+        line-height: 110%;
+        color: #F1CDB3;
+        width: 184px;
+        height: 35px;
+        margin: 0;
+        letter-spacing: 0.06em;
+        cursor: pointer;
+    }
+    &__subtitle {
+        width: 180px;
+        height: 15px;
+        font-size: 13px;
+        line-height: 15px;
+        letter-spacing: 0.1em;
+        margin-right: 0;
+        margin-top: 10px;
+    }
+    &__dog {
+        position: absolute;
+        left: calc(50% - 698px/2 + 251px);
+        bottom: 0px;
+    }
+}
+.nav{
+    &__container {
+        align-items: center;
+        vertical-align: middle;
+        width: 443px;
+    }
+    &__menu {
+        display: flex;
+        width: 443px;
+        height: 27px;
+        justify-content: space-between;
+        margin-top: 16px;
+        &_modal {
+            flex-direction: column;
+            width: 243px;
+            height: 327px;
+            margin: 0 auto;
+            align-items: center;
+            margin-top: 158px;
+            justify-content: center;
+        }
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 160%;
+        color:#CDCDCD;
+        cursor: pointer;
+        &_selected {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background: #F1CDB3;
+        }
+        a {
+            color: #CDCDCD;
+        }
+        &_modal {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 32px;
+            line-height: 160%;
+            text-align: center;
+            margin-top: 40px;
+            white-space: nowrap;
+            a {
+                color: #CDCDCD;
+            }
+            &_selected {
+                a {
+                    color: #FAFAFA;
+                }
+            }
+        }
+    }
+}
+.header__info {
+    width: 460px;
+    height: 322px;
+}

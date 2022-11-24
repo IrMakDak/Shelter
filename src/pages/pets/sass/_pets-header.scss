@@ -1,0 +1,30 @@
+.pets {
+    margin: 30px auto;
+    text-align: center;
+    &__logo {
+        &__title {
+            color: #545454;
+            margin: 0;
+            a {
+                font-family: 'Georgia', serif;
+                font-size: 32px;
+                line-height: 110%;
+                display: block;
+                text-align: left;
+            }
+        }
+        &__subtitle {
+            text-align: left;
+        }
+    }
+    .nav__item {
+        a {
+            color: #545454;
+        }
+        &_select {
+            a {
+                color: #292929;
+            }
+        }
+    }
+}

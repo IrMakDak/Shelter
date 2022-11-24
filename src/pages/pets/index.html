@@ -5,8 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our pets</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
     <body>
+        <header class="pets">
+            <div class="logo__container">
+                <h1 class="logo logo__title pets__logo__title">
+                    <a href="http://127.0.0.1:5500/src/pages/main/">Cozy House</a>
+                </h1>
+                <div class="logo logo__subtitle pets__logo__subtitle">Shelter for pets in Boston</div>
+            </div>
+            <div class="nav__container">
+                <nav class="nav__menu">
+                    <div class="nav__item"><a href="http://127.0.0.1:5500/src/pages/main/">About the shelter</a>
+                    </div>
+                    <div class="nav__item nav__item_select">
+                        <a href="http://127.0.0.1:5500/src/pages/pets/">Our pets</a>
+                        <div class="nav__item_selected"></div>
+                    </div>
+                    <div class="nav__item"><a href="http://127.0.0.1:5500/src/pages/main/#help">Help the shelter</a>
+                    </div>
+                    <div class="nav__item"><a href="http://127.0.0.1:5500/src/pages/main/#contacts">Contacts</a></div>
+                </nav>
+            </div>
+            <div class="hamburger">&#9776;</div>
+            <div class="menu hide">
+                <div class="menu__container">
+                    <div class="logo__container">
+                        <h1 class="logo logo__title">Cozy House</h1>
+                        <div class="logo logo__subtitle">Shelter for pets in Boston</div>
+                    </div>
+                    <nav class="nav__menu nav__menu_modal">
+                        <div class="nav__item_modal">
+                            <a href="http://127.0.0.1:5500/src/pages/main/">About the shelter</a>
+                        </div>
+                        <div class="nav__item_modal nav__item_modal_selected">
+                            <a href="http://127.0.0.1:5500/src/pages/pets/" class="selected">Our pets</a>
+                            <div class="nav__item_selected"></div></div>
+                        <div class="nav__item_modal">
+                            <a href="http://127.0.0.1:5500/src/pages/main/#help">Help the shelter</a>
+                        </div>
+                        <div class="nav__item_modal">
+                            <a href="http://127.0.0.1:5500/src/pages/main/#contacts">Contacts</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <section class="friends">
+            <div class="container__friends">
+                <h3 class="friends__title">Our friends who <br> are looking for a house</h3>
+                <div class="friends__wrapper"></div>
+                <div class="arrows">
+                    <div class="slider__round slider__prev_double">
+                        <div class="slider__indicator">&laquo;</div>
+                    </div>
+                    <div class="slider__round slider__prev">
+                        <div class="slider__indicator">&lsaquo;</div>
+                    </div>
+                    <div class="slider__round slider__round_num">
+                        <div class="slider__indicator slider__num">1</div>
+                    </div>
+                    <div class="slider__round slider__next">
+                        <div class="slider__indicator">&rsaquo;</div>
+                    </div>
+                    <div class="slider__round  slider__next_double">
+                        <div class="slider__indicator">&raquo;</div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <footer class="footer">
             <div class="container__footer">
                 <div class="footer__info">
@@ -22,11 +90,11 @@
                 </div>
                 <div class="footer__info">
                     <h3 class="heading footer__heading footer__heading__second">We are waiting for your visit</h3>
-                    <div class="item">
+                    <div class="item item_second">
                         <img src="../../assets/images/icons/icon-marker.png" alt="" class="footer__png">
                         <span class="footer__text">1 Central Street, Boston (entrance from the store)</span>
                     </div>
-                    <div class="item">
+                    <div class="item item_second">
                         <img src="../../assets/images/icons/icon-marker.png" alt="phone" class="footer__png">
                         <span class="footer__text">18 South Park, London </span>
                     </div>
@@ -34,5 +102,6 @@
                 <img src="../../assets/images/png/footer-puppy.png" alt="dogs" class="footer__dog">
             </div>
         </footer>
+        <script src="script.js"></script>
     </body>
 </html>

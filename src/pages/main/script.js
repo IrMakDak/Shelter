@@ -91,11 +91,12 @@ async function renderSlideById(numberOfSlide, dir = 'next') {
 
         await getResource("http://localhost:3000/petsDB")
         .then(data => {
-            data.forEach(({img, name, type, descr, age, inoculations, diseases, parasites, id}) => {
-                if (id === numberOfSlide) {
-                    new PetSlide(img, name, type, descr, age, inoculations, diseases, parasites, id, dir, '.slider__wrapper').render();
+            for (let i = 0; i < data.length; i++) {
+                console.log(data[i]);
+                if (i+1 === numberOfSlide) {
+                    new PetSlide(data[i], dir, '.slider__wrapper').render();
                 }
-            })
+            }
         })
     } 
     if (typeof(numberOfSlide) == 'object') {
@@ -164,13 +165,13 @@ function hideModal(modal) {
 }
 //CREATE PET-SLIDE
 class PetSlide {
-    constructor(img, name, type, descr, age, inoculations, diseases, parasites, id, direction, parent) {
+    constructor({img, name, type, breed, description, age, inoculations, diseases, parasites}, direction, parent) {
         this.img = img,
         this.name = name,
-        this.id = id,
         this.direction = direction,
         this.type = type,
-        this.descr = descr,
+        this.breed = breed,
+        this.description = description,
         this.age = age,
         this.inoculations = inoculations,
         this.diseases = diseases,
@@ -178,6 +179,7 @@ class PetSlide {
         this.parent = document.querySelector(parent)
     }
     render() {
+        console.log(this.parent);
         const item = document.createElement('div');
         item.classList.add('slider__item');
         item.innerHTML = `
@@ -200,8 +202,8 @@ class PetSlide {
                 <img class="modal__img" src=${this.img} alt=${this.name}>
                 <div class="modal__info">
                     <div class="modal__info_name">${this.name}</div>
-                    <div class="modal__info_type">${this.type}</div>
-                    <div class="modal__info_descr">${this.descr}</div>
+                    <div class="modal__info_type">${this.type} - ${this.breed}</div>
+                    <div class="modal__info_descr">${this.description}</div>
                     <ul class="modal__ul">
                         <li ><span class="big__text">Age: </span><span class="modal__li">${this.age}</span></li>
                         <li><span class="big__text">Inoculations: </span> <span class="modal__li">${this.inoculations}</span></li>

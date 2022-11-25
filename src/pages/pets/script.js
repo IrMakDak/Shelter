@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', function() {
         doubleNext = document.querySelector('.slider__next_double'),
         doublePrev = document.querySelector('.slider__prev_double'),
         sliderNum = document.querySelector('.slider__num'),
-        countOfAllSlides = 8;
+        countOfAllSlides = 48;
 
     let width = window.innerWidth;
     let firstItem = 1;
@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', function() {
     if (width > 1279) {
         visibleItems = 8;
         renderSlidesInRange(visibleItems);
-        makeArrowGrey(prev, doublePrev, next, doubleNext);
+        makeArrowGrey(prev, doublePrev);
     }
     //GET TWO ITEMS OF SLIDER
     if (width > 767 && width <= 1279) {
@@ -50,18 +50,16 @@ window.addEventListener('DOMContentLoaded', function() {
             removeAllPetItems();
             //count number of first item
             firstItem = lastItem + 1;
-            console.log('first - ', firstItem);
 
             // make arrows grey/active & count number of last slide
-            if (lastItem * 2 >= countOfAllSlides) {
+            if (lastItem + visibleItems >= countOfAllSlides) {
                 makeArrowGrey(next, doubleNext);
                 makeArrowActive(prev, doublePrev);
                 lastItem = countOfAllSlides;
             } else {
                 makeArrowActive(prev, doublePrev);
-                lastItem = lastItem * 2;
+                lastItem += visibleItems;
             }
-            console.log('last - ', lastItem);
 
             //load new page
             renderSlidesInRange(lastItem, firstItem);
@@ -75,6 +73,7 @@ window.addEventListener('DOMContentLoaded', function() {
         if (!prev.classList.contains('slider__round_grey')) {
             //delete old page
             removeAllPetItems();
+            makeArrowActive(next, doubleNext);
 
             lastItem = firstItem - 1;
             
@@ -84,8 +83,6 @@ window.addEventListener('DOMContentLoaded', function() {
                 makeArrowGrey(prev, doublePrev);
                 makeArrowActive(next, doubleNext);
             }
-            console.log('first - ', firstItem);
-            console.log('last - ', lastItem);
 
             //load new page
             renderSlidesInRange(lastItem, firstItem);
@@ -98,19 +95,17 @@ window.addEventListener('DOMContentLoaded', function() {
     doubleNext.addEventListener('click', () => {
         if (!doubleNext.classList.contains('slider__round_grey')) {
             removeAllPetItems();
+
             lastItem = countOfAllSlides;
-            firstItem = lastItem - (countOfAllSlides % visibleItems) + 1;
-            console.log('first - ', firstItem);
-            console.log('last - ', lastItem);
+            (countOfAllSlides % visibleItems !== 0) ? firstItem = lastItem - (countOfAllSlides % visibleItems) + 1 : firstItem = countOfAllSlides - visibleItems + 1;
 
             renderSlidesInRange(lastItem, firstItem);
 
             makeArrowGrey(next, doubleNext);
             makeArrowActive(prev, doublePrev);
-
-            sliderNumber = parseInt(countOfAllSlides / visibleItems) + 1;
+            (countOfAllSlides % visibleItems !== 0) ? sliderNumber = parseInt(countOfAllSlides / visibleItems) + 1 : sliderNumber = parseInt(countOfAllSlides / visibleItems);
+            
             sliderNum.textContent = sliderNumber;
-            console.log(sliderNumber);
         }
     })
     doublePrev.addEventListener('click', () => {
@@ -118,8 +113,6 @@ window.addEventListener('DOMContentLoaded', function() {
             removeAllPetItems();
             lastItem = visibleItems;
             firstItem = 1;
-            console.log('first - ', firstItem);
-            console.log('last - ', lastItem);
 
             renderSlidesInRange(lastItem, firstItem);
             
@@ -145,30 +138,27 @@ window.addEventListener('DOMContentLoaded', function() {
 })
 //GET ALL SLIDES IN A RANGE
 async function renderSlidesInRange(end, start = 1) {
-    for (let i = start; i <= end; i++) {
+    for (let j = start; j <= end; j++) {
         await getResource("http://localhost:3000/petsDB")
         .then(data => {
-            data.forEach(({img, name, type, descr, age, inoculations, diseases, parasites, id}) => {
-                if (id === i) {
-                    new PetSlide(img, name, type, descr, age, inoculations, diseases, parasites, id, 'next', '.friends__wrapper').render();
+            if (end <= data.length) {
+                for (let i = 0; i < data.length; i++) {
+                    if (i+1 === j) {
+                        new PetSlide(data[i], 'next', '.friends__wrapper').render();
+                    }
                 }
-            })
+            } else {
+                let k = Math.floor(Math.random() * +data.length); //random num from 0 to 7
+                for (let i = 0; i <= data.length; i++) {
+                    if (i === k) {
+                        new PetSlide(data[i], 'next', '.friends__wrapper').render();
+                    }
+                }
+            }
+            
         })
     }
 }  
-//GET ANY SLIDE FROM 1-ST TO "N"-S
-async function renderSlides(slides) {
-    for (let i = 1; i <= slides; i++) {
-        await getResource("http://localhost:3000/petsDB")
-        .then(data => {
-            data.forEach(({img, name, type, descr, age, inoculations, diseases, parasites, id}) => {
-                if (id === i) {
-                    new PetSlide(img, name, type, descr, age, inoculations, diseases, parasites, id, 'next', '.friends__wrapper').render();
-                }
-            })
-        })
-    }
-}
 function removeAllPetItems() {
     document.querySelectorAll('.slider__item').forEach(i => {
         i.remove();
@@ -190,13 +180,13 @@ function makeArrowActive(...selector) {
 }
 //CREATE PET-SLIDE
 class PetSlide {
-    constructor(img, name, type, descr, age, inoculations, diseases, parasites, id, direction, parent) {
+    constructor({img, name, type, breed, description, age, inoculations, diseases, parasites}, direction, parent) {
         this.img = img,
         this.name = name,
-        this.id = id,
+        this.breed = breed,
         this.direction = direction,
         this.type = type,
-        this.descr = descr,
+        this.description = description,
         this.age = age,
         this.inoculations = inoculations,
         this.diseases = diseases,
@@ -223,8 +213,8 @@ class PetSlide {
                 <img class="modal__img" src=${this.img} alt=${this.name}>
                 <div class="modal__info">
                     <div class="modal__info_name">${this.name}</div>
-                    <div class="modal__info_type">${this.type}</div>
-                    <div class="modal__info_descr">${this.descr}</div>
+                    <div class="modal__info_type">${this.type} - ${this.bread}</div>
+                    <div class="modal__info_descr">${this.description}</div>
                     <ul class="modal__ul">
                         <li ><span class="big__text">Age: </span><span class="modal__li">${this.age}</span></li>
                         <li><span class="big__text">Inoculations: </span> <span class="modal__li">${this.inoculations}</span></li>

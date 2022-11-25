@@ -92,7 +92,6 @@ async function renderSlideById(numberOfSlide, dir = 'next') {
         await getResource("http://localhost:3000/petsDB")
         .then(data => {
             for (let i = 0; i < data.length; i++) {
-                console.log(data[i]);
                 if (i+1 === numberOfSlide) {
                     new PetSlide(data[i], dir, '.slider__wrapper').render();
                 }

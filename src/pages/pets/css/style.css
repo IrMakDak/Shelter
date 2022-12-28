@@ -243,6 +243,7 @@ header {
   margin: 0;
   letter-spacing: 0.06em;
   cursor: pointer;
+  white-space: nowrap;
 }
 .logo__subtitle {
   width: 180px;
@@ -252,6 +253,7 @@ header {
   letter-spacing: 0.1em;
   margin-right: 0;
   margin-top: 10px;
+  white-space: nowrap;
 }
 .logo__dog {
   position: absolute;

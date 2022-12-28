@@ -1,5 +1,3 @@
-//GET DATA FROM JSON-SERVER
-//to start json-server ---> npx json-server src/pages/petsDB.json
 const getResource = async (url) => {
     const res = await fetch(url);
     if (!res.ok) {
@@ -91,7 +89,6 @@ async function renderSlideById(numberOfSlide, dir = 'next') {
 
         await getResource("https://irmakdak.github.io/Shelter-rs-school/src/pages/petsDB.json")
         .then(data => {
-            console.log(data.petsDB)
             for (let i = 0; i < data.petsDB.length; i++) {
                 if (i+1 === numberOfSlide) {
                     new PetSlide(data.petsDB[i], dir, '.slider__wrapper').render();
@@ -144,17 +141,27 @@ function createModal() {
 function closeModal() {
     const modal = document.querySelector('.modal');
     const close = document.querySelector(".modal__round");
+    const hamburger = document.querySelector(".hamburger");
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             hideModal(modal);
+            if (hamburger.classList.contains('hide')) {
+                hamburger.classList.remove("hide");
+            }
         }
     })
     close.addEventListener('click', () => {
         hideModal(modal);
+        if (hamburger.classList.contains('hide')) {
+            hamburger.classList.remove("hide");
+        }
     })
     document.addEventListener('keydown', (e) => {
         if (e.code === 'Escape' && !(modal.classList.contains('hide'))) {
             hideModal(modal);
+        }
+        if (hamburger.classList.contains('hide')) {
+            hamburger.classList.remove("hide");
         }
     })
 }
@@ -163,6 +170,7 @@ function hideModal(modal) {
     document.querySelector(".modal__window").remove();
     modal.classList.add('hide');
 }
+
 //CREATE PET-SLIDE
 class PetSlide {
     constructor({img, name, type, breed, description, age, inoculations, diseases, parasites}, direction, parent) {
@@ -179,7 +187,6 @@ class PetSlide {
         this.parent = document.querySelector(parent)
     }
     render() {
-        console.log(this.parent);
         const item = document.createElement('div');
         item.classList.add('slider__item');
         item.innerHTML = `
@@ -213,7 +220,11 @@ class PetSlide {
                 </div>
             `;
             const parent = document.querySelector('.modal__container'),
-                modalHidden = document.querySelector('.modal');
+                modalHidden = document.querySelector('.modal'),
+                hamburger = document.querySelector(".hamburger");
+            if (!hamburger.classList.contains("hide")) {
+                hamburger.classList.add("hide");
+            }
             modalHidden.classList.remove('hide');
             parent.append(modal);
         })

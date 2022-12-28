@@ -63,9 +63,6 @@ h5 {
 a {
     text-decoration: none;
 }
-.hide {
-    display: none;
-}
 @import '_header';
 @import '_main';
 @import '_about';
@@ -76,3 +73,7 @@ a {
 @import '_modal';
 @import '_media';
 @import '_media-footer';
+
+.hide {
+    display: none;
+}

@@ -238,7 +238,7 @@ header {
   font-size: 32px;
   line-height: 110%;
   color: #F1CDB3;
-  width: 184px;
+  width: 186px;
   height: 35px;
   margin: 0;
   letter-spacing: 0.06em;
@@ -326,11 +326,11 @@ header {
   background: #F6F6F6;
 }
 .homeless__heading {
-  width: 400px;
+  width: 420px;
   display: block;
   text-align: center;
   margin: 0 auto;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.06em;
 }
 
 .slider {
@@ -449,6 +449,7 @@ header {
 .pets__logo__title {
   color: #545454;
   margin: 0;
+  width: 186px;
 }
 .pets__logo__title a {
   font-family: "Georgia", serif;

@@ -89,11 +89,12 @@ window.addEventListener('DOMContentLoaded', function() {
 async function renderSlideById(numberOfSlide, dir = 'next') {
     if (typeof(numberOfSlide) == 'number') {
 
-        await getResource("http://localhost:3000/petsDB")
+        await getResource("https://irmakdak.github.io/Shelter-rs-school/src/pages/petsDB.json")
         .then(data => {
-            for (let i = 0; i < data.length; i++) {
+            console.log(data.petsDB)
+            for (let i = 0; i < data.petsDB.length; i++) {
                 if (i+1 === numberOfSlide) {
-                    new PetSlide(data[i], dir, '.slider__wrapper').render();
+                    new PetSlide(data.petsDB[i], dir, '.slider__wrapper').render();
                 }
             }
         })

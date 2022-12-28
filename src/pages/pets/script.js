@@ -1,5 +1,3 @@
-//GET DATA FROM JSON-SERVER
-//to start json-server ---> npx json-server src/pages/petsDB.json
 const getResource = async (url) => {
     const res = await fetch(url);
     if (!res.ok) {
@@ -139,19 +137,19 @@ window.addEventListener('DOMContentLoaded', function() {
 //GET ALL SLIDES IN A RANGE
 async function renderSlidesInRange(end, start = 1) {
     for (let j = start; j <= end; j++) {
-        await getResource("http://localhost:3000/petsDB")
+        await getResource("https://irmakdak.github.io/Shelter-rs-school/src/pages/petsDB.json")
         .then(data => {
-            if (end <= data.length) {
-                for (let i = 0; i < data.length; i++) {
+            if (end <= data.petsDB.length) {
+                for (let i = 0; i < data.petsDB.length; i++) {
                     if (i+1 === j) {
-                        new PetSlide(data[i], 'next', '.friends__wrapper').render();
+                        new PetSlide(data.petsDB[i], 'next', '.friends__wrapper').render();
                     }
                 }
             } else {
-                let k = Math.floor(Math.random() * +data.length); //random num from 0 to 7
-                for (let i = 0; i <= data.length; i++) {
+                let k = Math.floor(Math.random() * +data.petsDB.length); //random num from 0 to 7
+                for (let i = 0; i <= data.petsDB.length; i++) {
                     if (i === k) {
-                        new PetSlide(data[i], 'next', '.friends__wrapper').render();
+                        new PetSlide(data.petsDB[i], 'next', '.friends__wrapper').render();
                     }
                 }
             }

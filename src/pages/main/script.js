@@ -145,6 +145,7 @@ function closeModal() {
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             hideModal(modal);
+            document.body.style = "";
             if (hamburger.classList.contains('hide')) {
                 hamburger.classList.remove("hide");
             }
@@ -152,6 +153,7 @@ function closeModal() {
     })
     close.addEventListener('click', () => {
         hideModal(modal);
+        document.body.style = "";
         if (hamburger.classList.contains('hide')) {
             hamburger.classList.remove("hide");
         }
@@ -159,9 +161,10 @@ function closeModal() {
     document.addEventListener('keydown', (e) => {
         if (e.code === 'Escape' && !(modal.classList.contains('hide'))) {
             hideModal(modal);
-        }
-        if (hamburger.classList.contains('hide')) {
-            hamburger.classList.remove("hide");
+            document.body.style = "";
+            if (hamburger.classList.contains('hide')) {
+                hamburger.classList.remove("hide");
+            }
         }
     })
 }
@@ -225,6 +228,7 @@ class PetSlide {
             if (!hamburger.classList.contains("hide")) {
                 hamburger.classList.add("hide");
             }
+            document.body.style="overflow: hidden;";
             modalHidden.classList.remove('hide');
             parent.append(modal);
         })

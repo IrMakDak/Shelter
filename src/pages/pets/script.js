@@ -224,6 +224,7 @@ class PetSlide {
             const parent = document.querySelector('.modal__container'),
                 modalHidden = document.querySelector('.modal');
             modalHidden.classList.remove('hide');
+            document.body.style="overflow: hidden;";
             document.querySelector('.hamburger').classList.add('hide');
             parent.append(modal);
         })
@@ -261,14 +262,17 @@ function closeModal() {
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             hideModal(modal);
+            document.body.style="";
         }
     })
     close.addEventListener('click', () => {
         hideModal(modal);
+        document.body.style="";
     })
     document.addEventListener('keydown', (e) => {
         if (e.code === 'Escape' && !(modal.classList.contains('hide'))) {
             hideModal(modal);
+            document.body.style="";
         }
     })
 }

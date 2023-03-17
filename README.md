@@ -2,7 +2,7 @@
   Shelter
 </h1>
 
-### [Link to deployed application]()
+### [Link to deployed application](https://irmakdak.github.io/Shelter-rs-school/src/pages/main/)
 
 ---
 
@@ -17,9 +17,9 @@
 
 ### Install
 ```
-git clone https://github.com/IrMakDak/English-for-kids.git
+git clone https://github.com/IrMakDak/Shelter-rs-school.git
 npm i
-npx webpack
+npx gulp
 ```
 
 ---
@@ -31,9 +31,7 @@ npx webpack
   <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-plain-wordmark.svg"  title="CSS3" alt="CSS" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="npm" alt="npm" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/babel/babel-original.svg" title="babel" alt="babel" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/eslint/eslint-original.svg" title="babel" alt="babel" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" title="babel" alt="babel" width="40" height="40"/>&nbsp;
+   <img src="https://github.com/devicons/devicon/blob/master/icons/gulp/gulp-plain.svg" title="gulp" alt="gulp" width="40" height="40"/>&nbsp;
 </div>
 
 ---

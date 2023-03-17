@@ -12,6 +12,7 @@
 - 🌸 Adaptive and interactive interface
 - 📝 Pixel Perfect layout 
 - 📄 [Read full task](https://github.com/rolling-scopes-school/js-fe-course-en/blob/main/tasks/shelter/README.md#shelter)
+- :bread: [Link to Figma](https://www.figma.com/file/tKcmzkARtMUFQAR9VLdLkl/shelter-dom?node-id=94-43&t=Umn6gmCco2I7900A-0)
 
 ---
 

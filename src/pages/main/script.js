@@ -87,7 +87,7 @@ window.addEventListener('DOMContentLoaded', function() {
 async function renderSlideById(numberOfSlide, dir = 'next') {
     if (typeof(numberOfSlide) == 'number') {
 
-        await getResource("https://irmakdak.github.io/Shelter-rs-school/src/pages/petsDB.json")
+        await getResource("https://irmakdak.github.io/Shelter/src/pages/petsDB.json")
         .then(data => {
             for (let i = 0; i < data.petsDB.length; i++) {
                 if (i+1 === numberOfSlide) {

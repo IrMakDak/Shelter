@@ -137,7 +137,7 @@ window.addEventListener('DOMContentLoaded', function() {
 //GET ALL SLIDES IN A RANGE
 async function renderSlidesInRange(end, start = 1) {
     for (let j = start; j <= end; j++) {
-        await getResource("https://irmakdak.github.io/Shelter-rs-school/src/pages/petsDB.json")
+        await getResource("https://irmakdak.github.io/Shelter/src/pages/petsDB.json")
         .then(data => {
             if (end <= data.petsDB.length) {
                 for (let i = 0; i < data.petsDB.length; i++) {

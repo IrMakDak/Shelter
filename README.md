@@ -2,7 +2,7 @@
   Shelter
 </h1>
 
-### [Link to deployed application](https://irmakdak.github.io/Shelter-rs-school/src/pages/main/)
+### [Link to deployed application](https://irmakdak.github.io/Shelter/src/pages/main/)
 
 ---
 
@@ -34,6 +34,14 @@ npx gulp
   <img src="https://github.com/devicons/devicon/blob/master/icons/npm/npm-original-wordmark.svg" title="npm" alt="npm" width="40" height="40"/>&nbsp;
    <img src="https://github.com/devicons/devicon/blob/master/icons/gulp/gulp-plain.svg" title="gulp" alt="gulp" width="40" height="40"/>&nbsp;
 </div>
+
+---
+
+### Screenshots:
+
+<img width="1340" alt="Screenshot 2023-03-20 at 12 42 48" src="https://user-images.githubusercontent.com/54810215/226331440-af49141c-480b-486c-9010-24ef28f64735.png">
+
+<img width="1314" alt="Screenshot 2023-03-20 at 12 51 01" src="https://user-images.githubusercontent.com/54810215/226331491-fcad1a5c-a8f1-43cf-b278-213474f511da.png">
 
 ---
 
